@@ -22,10 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 **/
 
+//-- To run ./gradlew run
+
 //-- Set the gradle version you would like - wrapper is only supported for gradle 1.6+
 task wrapper(type: Wrapper) {
     gradleVersion = "2.3-20141018220018+0000"
 }
+
+//-- Detect Open shift ip and port and assign them to the embedded tomcat
+def address = System.getenv("OPENSHIFT_DIY_IP") ? System.getenv("OPENSHIFT_DIY_IP") : "localhost"
+def port = System.getenv("OPENSHIFT_DIY_PORT") ? System.getenv("OPENSHIFT_DIY_PORT") : "8081"
+
+applicationDefaultJvmArgs = ["-Dserver.port=$port", "-Dserver.address=$address"]
 
 /**
 The below application is obtained from - https://github.com/spring-guides/gs-rest-service
@@ -67,9 +75,4 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
 }
-
-def address = System.getenv("OPENSHIFT_DIY_IP") ? System.getenv("OPENSHIFT_DIY_IP") : "localhost"
-def port = System.getenv("OPENSHIFT_DIY_PORT") ? System.getenv("OPENSHIFT_DIY_PORT") : "8081"
-
-applicationDefaultJvmArgs = ["-Dserver.port=$port", "-Dserver.address=$address"]
 
