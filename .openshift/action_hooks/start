@@ -3,9 +3,10 @@
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
 cd $OPENSHIFT_REPO_DIR
+export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
 
 if [[ ! -x "gradlew" ]]; then
 	chmod u+x gradlew
 fi
 
-nohup ./gradlew build > output.log 2> err.log < /dev/null & 
+nohup ./gradlew build > $OPENSHIFT__LOG_DIR/gradle_output.log 2> $OPENSHIFT__LOG_DIR/gradle_err.log < /dev/null & 
