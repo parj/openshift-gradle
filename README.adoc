@@ -32,7 +32,7 @@ Branch - master
 * Click create app
 
 == Simple way to get started via Command Line
-* You need to have rhc tools installed
+* You need to have rhc tools installed. https://developers.openshift.com/en/getting-started-client-tools.html[RHC Tools Link]
 
 * Run the command
 
