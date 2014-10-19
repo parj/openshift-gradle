@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 //-- Set the gradle version you would like - wrapper is only supported for gradle 1.6+
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = "2.3-20141018220018+0000"
 }
 
 /**
