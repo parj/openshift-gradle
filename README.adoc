@@ -19,7 +19,7 @@ NOTE: Assuming you have gradle, java running successfully on your local machine
 
 DIY Catridge overview - https://developers.openshift.com/en/diy-overview.html
 
-== Simple way to get started
+== Simple way to get started via GUI
 * Head to create new DIY catridge - https://openshift.redhat.com/app/console/application_type/cart!diy-0.1[Link]
 
 * In the source code field put in
@@ -30,3 +30,14 @@ Branch - master
 ....
 
 * Click create app
+
+== Simple way to get started via Command Line
+* You need to have rhc tools installed
+
+* Run the command
+
+[source, sh]
+----
+rhc create-app test123 diy --from-code=git://github.com/parj/openshift-gradle
+----
+
