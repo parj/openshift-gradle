@@ -1,0 +1,28 @@
+---
+tags: [open-shift] [gradle]
+projects: [gradle]
+----
+:spring_version: current
+:toc:
+:project_id: openshift-gradle
+:spring_version: current
+:spring_boot_version: 1.1.8.RELEASE
+:icons: font
+:source-highlighter: prettify
+
+== Introduction
+
+This project is for creating an empty gradle bootstrap to use within Open Shift
+
+CAUTION: Assuming you have gradle, java running successfully on your local machine
+
+https://developers.openshift.com/en/diy-overview.html[DIY Catridge overview]
+
+== Simple way to get started
+. Head to create new DIY catridge - https://openshift.redhat.com/app/console/application_type/cart!diy-0.1[Link]
+. In the source code field put in
+---
+URL - https://github.com/parj/openshift-gradle
+Branch - master
+---
+. Click create app
