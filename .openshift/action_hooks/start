@@ -9,4 +9,4 @@ if [[ ! -x "gradlew" ]]; then
 	chmod u+x gradlew
 fi
 
-nohup ./gradlew build > $OPENSHIFT_LOG_DIR/gradle_output.log 2> $OPENSHIFT_LOG_DIR/gradle_err.log < /dev/null & 
+nohup ./gradlew -Dorg.gradle.bindaddress=$OPENSHIFT_INTERNAL_IP build > $OPENSHIFT_LOG_DIR/gradle_output.log 2> $OPENSHIFT_LOG_DIR/gradle_err.log < /dev/null & 
