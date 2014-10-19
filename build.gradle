@@ -31,9 +31,7 @@ task wrapper(type: Wrapper) {
 
 //-- Detect Open shift ip and port and assign them to the embedded tomcat
 def address = System.getenv("OPENSHIFT_DIY_IP") ? System.getenv("OPENSHIFT_DIY_IP") : "localhost"
-def port = System.getenv("OPENSHIFT_DIY_PORT") ? System.getenv("OPENSHIFT_DIY_PORT") : "8081"
-
-applicationDefaultJvmArgs = ["-Dserver.port=$port", "-Dserver.address=$address"]
+def port = System.getenv("OPENSHIFT_DIY_PORT") ? System.getenv("OPENSHIFT_DIY_PORT") : "8080"
 
 /**
 The below application is obtained from - https://github.com/spring-guides/gs-rest-service
@@ -76,3 +74,5 @@ dependencies {
     testCompile("junit:junit")
 }
 
+//-- Assign to embedded tomcat
+applicationDefaultJvmArgs = ["-Dserver.port=$port", "-Dserver.address=$address"]
